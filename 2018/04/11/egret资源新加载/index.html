@@ -60,7 +60,7 @@
 
 
 
-  <meta name="keywords" content="3d," />
+  <meta name="keywords" content="egret," />
 
 
 
@@ -71,29 +71,18 @@
 
 
 
-<meta name="description" content="贴图纹理映射（Texture Mapping） 就是将一张或者多张图片贴在一个对象或者一个多面体（3d对象上面）  UV映射（UV Mapping） 把平面图像的不同区块映射到3D模型的不同面上去。 比如： 讲多张图片合并成一张大图。  这是一张大图，然后将这张大图的每一个四边形的区域，画到一个正方体上面。 法线贴图（Normal Mapped） 例如, 一个法线 (-1, 0, 1) 会被作为">
-<meta name="keywords" content="3d">
+<meta name="description" content="最新加加载资源配置文件方式两种方式，首先：  await RES.loadConfig(“resource/default.res.json”, “resource/“);  观察函数RES.loadConfig(…)的返回值，可以发下他的返回值是一个Promise对象 另外一种方式： RES.LoadConfig.then(()=&amp;gt;{     console.log(&amp;quot;confi">
+<meta name="keywords" content="egret">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3D图形学概念">
-<meta property="og:url" content="http://yoursite.com/2018/04/09/3d图形学概念/index.html">
+<meta property="og:title" content="egret资源新加载">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/egret资源新加载/index.html">
 <meta property="og:site_name" content="简居室">
-<meta property="og:description" content="贴图纹理映射（Texture Mapping） 就是将一张或者多张图片贴在一个对象或者一个多面体（3d对象上面）  UV映射（UV Mapping） 把平面图像的不同区块映射到3D模型的不同面上去。 比如： 讲多张图片合并成一张大图。  这是一张大图，然后将这张大图的每一个四边形的区域，画到一个正方体上面。 法线贴图（Normal Mapped） 例如, 一个法线 (-1, 0, 1) 会被作为">
+<meta property="og:description" content="最新加加载资源配置文件方式两种方式，首先：  await RES.loadConfig(“resource/default.res.json”, “resource/“);  观察函数RES.loadConfig(…)的返回值，可以发下他的返回值是一个Promise对象 另外一种方式： RES.LoadConfig.then(()=&amp;gt;{     console.log(&amp;quot;confi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/cube2.png">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/texture-atlas.jpg">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/cjFUm7X.png">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/e4FtQNt.png">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/WHI3uYo.gif">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/152116pj6jlhfv1hymmooo.jpg.thumb.jpg">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/152115mj3k0i094930ejya.jpg.thumb.jpg">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/165534klgl25zzeq5egdqv.jpg.thumb.jpg">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/smoothing_character.jpg">
-<meta property="og:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/20170814143731489.gif">
-<meta property="og:updated_time" content="2018-04-09T10:48:30.000Z">
+<meta property="og:updated_time" content="2018-04-11T07:10:51.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3D图形学概念">
-<meta name="twitter:description" content="贴图纹理映射（Texture Mapping） 就是将一张或者多张图片贴在一个对象或者一个多面体（3d对象上面）  UV映射（UV Mapping） 把平面图像的不同区块映射到3D模型的不同面上去。 比如： 讲多张图片合并成一张大图。  这是一张大图，然后将这张大图的每一个四边形的区域，画到一个正方体上面。 法线贴图（Normal Mapped） 例如, 一个法线 (-1, 0, 1) 会被作为">
-<meta name="twitter:image" content="http://yoursite.com/jjs//2018/04/09/3d图形学概念/cube2.png">
+<meta name="twitter:title" content="egret资源新加载">
+<meta name="twitter:description" content="最新加加载资源配置文件方式两种方式，首先：  await RES.loadConfig(“resource/default.res.json”, “resource/“);  观察函数RES.loadConfig(…)的返回值，可以发下他的返回值是一个Promise对象 另外一种方式： RES.LoadConfig.then(()=&amp;gt;{     console.log(&amp;quot;confi">
 
 
 
@@ -123,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/09/3d图形学概念/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/11/egret资源新加载/"/>
 
 
 
 
 
-  <title>3D图形学概念 | 简居室</title>
+  <title>egret资源新加载 | 简居室</title>
   
 
 
@@ -248,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/jjs/2018/04/09/3d图形学概念/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/jjs/2018/04/11/egret资源新加载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="南方有乔木">
@@ -265,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">3D图形学概念</h1>
+          <h1 class="post-title" itemprop="name headline">egret资源新加载</h1>
         
 
         <div class="post-meta">
@@ -277,8 +266,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T17:41:51+08:00">
-                2018-04-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T15:09:59+08:00">
+                2018-04-11
               </time>
             
 
@@ -315,46 +304,86 @@
       
 
       
-        <h3 id="贴图"><a href="#贴图" class="headerlink" title="贴图"></a>贴图</h3><p>纹理映射（Texture Mapping）</p>
-<p>就是将一张或者多张图片贴在一个对象或者一个多面体（3d对象上面）</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./cube2.png" alt=""></p>
-<h3 id="UV映射"><a href="#UV映射" class="headerlink" title="UV映射"></a>UV映射</h3><p>（UV Mapping）</p>
-<p>把平面图像的不同区块映射到3D模型的不同面上去。</p>
-<p>比如：</p>
-<p>讲多张图片合并成一张大图。</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./texture-atlas.jpg" alt=""></p>
-<p>这是一张大图，然后将这张大图的每一个四边形的区域，画到一个正方体上面。</p>
-<h3 id="法线贴图"><a href="#法线贴图" class="headerlink" title="法线贴图"></a>法线贴图</h3><p>（Normal Mapped）</p>
-<p>例如, 一个法线 (-1, 0, 1) 会被作为 RGB 编码为 (0, 0.5, 1). x 轴(左/右)被保存到红色通道, y 轴(上/下)被保存到绿色通道, z 轴(前/后)被保存到蓝色通道. 最终的法线图(normal map)看起来就是下面这个样子:</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./cjFUm7X.png" alt=""></p>
-<p>然后用上原本的纹理：</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./e4FtQNt.png" alt=""></p>
-<p>这样生成的效果如下：（当然是加了光源，这样看起来比较明显）</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./WHI3uYo.gif" alt=""></p>
-<p>那么我们用文字来描述这种效果就是：</p>
-<p>对于视觉效果而言，它的效率比原有的凹凸表面更高，若在特定位置上应用光源，可以让细节程度较低的表面生成高细节程度的精确光照方向和反射效果</p>
-<p>注意，它本质上也是一个平面，但是不像普通贴图那样只是一个光滑的平面。</p>
-<h3 id="高动态范围"><a href="#高动态范围" class="headerlink" title="高动态范围"></a>高动态范围</h3><p>High-Dynamic Range，简称HDR</p>
-<p>就拿照相来说明一下吧：</p>
-<p>我们将焦点对准建筑物，就会发现远处的天空看不到。</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./152116pj6jlhfv1hymmooo.jpg.thumb.jpg" alt=""></p>
-<p>我们将焦点对准了蓝天，建筑物就变得有点暗。</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./152115mj3k0i094930ejya.jpg.thumb.jpg" alt=""></p>
-<p>HDR呢，就是拍摄多张不同曝光程度的照片，然后自动合成，从而来实现暗部细节明显，亮处有过曝的效果。效果如下：</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./165534klgl25zzeq5egdqv.jpg.thumb.jpg" alt=""></p>
-<h3 id="曲面细分"><a href="#曲面细分" class="headerlink" title="曲面细分"></a>曲面细分</h3><p>Tessellation</p>
-<p>在dx11引入了一种新科技。我们先来看一下对比图。</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/smoothing_character.jpg" alt=""></p>
-<p>开启了曲面细分后，看到人物模型轮廓已经相当平滑了，使得游戏画面更加真实。</p>
-<p>好处如下：</p>
-<ol>
-<li>动态LOD（levels of detail，细节层次），我们可以基于摄像机的远近和其它因素决定要产生的细节丰富度。如果我们离物体比较远，就没有必要产生那么多模型面数。</li>
-<li>使物理和动画模拟更加高效。低面数模型来计算物理和动画，可以使得计算效率更加高，接着再曲面细分，达到更逼真的显示效果。</li>
-<li>节约内存。我们可以节约硬盘容量、CPU内存、GPU显存，在计算的时候再凭空新增细节顶点。</li>
-</ol>
-<p>其原理就是用到了贝塞尔曲线。只是扩展到了3d世界。</p>
-<p><img src="/jjs//2018/04/09/3d图形学概念/./20170814143731489.gif" alt=""></p>
+        <h3 id="最新加加载资源配置文件方式"><a href="#最新加加载资源配置文件方式" class="headerlink" title="最新加加载资源配置文件方式"></a>最新加加载资源配置文件方式</h3><p>两种方式，首先：</p>
+<blockquote>
+<p>await RES.loadConfig(“resource/default.res.json”, “resource/“);</p>
+</blockquote>
+<p>观察函数RES.loadConfig(…)的返回值，可以发下他的返回值是一个Promise对象</p>
+<p>另外一种方式：</p>
+<pre><code>RES.LoadConfig.then(()=&gt;{
+    console.log(&quot;config file load complete!&quot;);
+}).catch((err)=&gt;{
+    console.log(err);
+});
+</code></pre><h3 id="关于await-和-ansy的一些说明和彼此配合"><a href="#关于await-和-ansy的一些说明和彼此配合" class="headerlink" title="关于await 和 ansy的一些说明和彼此配合"></a>关于await 和 ansy的一些说明和彼此配合</h3><p>用<code>await</code>放在函数之前，是因为函数返回了了一个Promise对象，就是修饰了Promise对象。所以await只是针对promise对象。这是第一点。</p>
+<p>其次，我们使用的await的时候，是阻塞的。比如：</p>
+<pre><code>await RES.loadConfig(&quot;resource/default.res.json&quot;, &quot;resource/&quot;);
+this.nextLogic();
+</code></pre><p>在执行这一句的时候，要执行完了才能执行<code>this.nextLogic();</code>。如果不想阻塞，就执行<code>this.nextLogic();</code>，可以采用如下<code>asyn</code>方式：</p>
+<pre><code>public asyn doSthAwait(){
+    await RES.loadConfig(&quot;resource/default.res.json&quot;, &quot;resource/&quot;);
+}
 
+...
+
+this.doSthAwait();
+this.nextLogic();
+</code></pre><p>这样，程序会在调用了<code>doSthAwait()</code>之后，<strong>马上</strong>执行<code>nextLogic()</code></p>
+<h3 id="获得加载资源组的进度"><a href="#获得加载资源组的进度" class="headerlink" title="获得加载资源组的进度"></a>获得加载资源组的进度</h3><p>引擎提供了一个接口类型，这个接口可以帮助我们获得进度：</p>
+<p>先看一下定义：（略过也可以，( • ̀ω•́ )✧</p>
+<pre><code>declare namespace RES {
+    /**
+     * Promise的回调函数集合
+     */
+    interface PromiseTaskReporter {
+        /**
+         * 进度回调
+         */
+        onProgress?: (current: number, total: number) =&gt; void;
+        /**
+         * 取消回调
+         */
+        onCancel?: () =&gt; void;
+    }
+}
+</code></pre><p>我们查看新引擎的新建项目，如何用，三步走：</p>
+<p>继承这个接口:</p>
+<pre><code>class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
+}
+</code></pre><p>利用这个接口:</p>
+<pre><code>const loadingView = new LoadingUI();
+await RES.loadGroup(&quot;preload&quot;, 0, loadingView);
+</code></pre><p>实现接口函数：</p>
+<pre><code>public onProgress(current: number, total: number): void {
+    this.textField.text = `Loading...${current}/${total}`;
+}
+</code></pre><p>分析：在LoadingUI界面里面继承这个接口（很淫荡的做法），然后在调用加载资源组的时候，这个实现了这个接口的类型的对象，赋值给加载资源组函数的第三个形参。这样，引擎资源组的资源的时候，加载成功一个就去调用这个接口的<code>onProgress()</code>，那么我们可以在<code>onProgress()</code>实现我们的业务逻辑。</p>
+<h3 id="自定义加载类型特别说明，因为官方文档out啦"><a href="#自定义加载类型特别说明，因为官方文档out啦" class="headerlink" title="自定义加载类型特别说明，因为官方文档out啦"></a>自定义加载类型特别说明，因为官方文档out啦</h3><p>在查看egret文档的时候，我们总是看到一种写法是<a href="mailto:`@RES.mapConfig" target="_blank" rel="noopener">`@RES.mapConfig</a><code>，用于自定义资源格式的加载，但是在新版本的引擎版本中，我们看到这部分的定义是写在了</code>script\confg.ts`里面，并且采用比较常见的的写法：</p>
+<pre><code>typeSelector: (path) =&gt; {
+    const ext = path.substr(path.lastIndexOf(&quot;.&quot;) + 1);
+    const typeMap = {
+        &quot;jpg&quot;: &quot;image&quot;,
+        &quot;png&quot;: &quot;image&quot;,
+        &quot;webp&quot;: &quot;image&quot;,
+        &quot;json&quot;: &quot;json&quot;,
+        &quot;fnt&quot;: &quot;font&quot;,
+        &quot;pvr&quot;: &quot;pvr&quot;,
+        &quot;mp3&quot;: &quot;sound&quot;,
+        &quot;zip&quot;: &quot;zip&quot;,
+        &quot;sheet&quot;: &quot;sheet&quot;,
+        &quot;exml&quot;: &quot;text&quot;
+    }
+    let type = typeMap[ext];
+    if (type == &quot;json&quot;) {
+        if (path.indexOf(&quot;sheet&quot;) &gt;= 0) {
+            type = &quot;sheet&quot;;
+        } else if (path.indexOf(&quot;movieclip&quot;) &gt;= 0) {
+            type = &quot;movieclip&quot;;
+        };
+    }
+    return type;
+}
+</code></pre>
       
     </div>
     
@@ -371,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/jjs/tags/3d/" rel="tag"># 3d</a>
+            <a href="/jjs/tags/egret/" rel="tag"># egret</a>
           
         </div>
       
@@ -384,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/jjs/2018/04/09/渲染管线/" rel="next" title="渲染管线">
-                <i class="fa fa-chevron-left"></i> 渲染管线
+              <a href="/jjs/2018/04/10/猫猫指南/" rel="next" title="猫猫指南">
+                <i class="fa fa-chevron-left"></i> 猫猫指南
               </a>
             
           </div>
@@ -393,10 +422,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/jjs/2018/04/10/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#贴图"><span class="nav-number">1.</span> <span class="nav-text">贴图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UV映射"><span class="nav-number">2.</span> <span class="nav-text">UV映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#法线贴图"><span class="nav-number">3.</span> <span class="nav-text">法线贴图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高动态范围"><span class="nav-number">4.</span> <span class="nav-text">高动态范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#曲面细分"><span class="nav-number">5.</span> <span class="nav-text">曲面细分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#最新加加载资源配置文件方式"><span class="nav-number">1.</span> <span class="nav-text">最新加加载资源配置文件方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于await-和-ansy的一些说明和彼此配合"><span class="nav-number">2.</span> <span class="nav-text">关于await 和 ansy的一些说明和彼此配合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获得加载资源组的进度"><span class="nav-number">3.</span> <span class="nav-text">获得加载资源组的进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义加载类型特别说明，因为官方文档out啦"><span class="nav-number">4.</span> <span class="nav-text">自定义加载类型特别说明，因为官方文档out啦</span></a></li></ol></div>
             
 
           </div>

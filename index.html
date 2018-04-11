@@ -233,6 +233,204 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/jjs/2018/04/11/egret资源新加载/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="南方有乔木">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://icons.iconarchive.com/icons/hybridworks/yoritsuki/128/Kanban-sign-icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简居室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/jjs/2018/04/11/egret资源新加载/" itemprop="url">egret资源新加载</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T15:09:59+08:00">
+                2018-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="最新加加载资源配置文件方式"><a href="#最新加加载资源配置文件方式" class="headerlink" title="最新加加载资源配置文件方式"></a>最新加加载资源配置文件方式</h3><p>两种方式，首先：</p>
+<blockquote>
+<p>await RES.loadConfig(“resource/default.res.json”, “resource/“);</p>
+</blockquote>
+<p>观察函数RES.loadConfig(…)的返回值，可以发下他的返回值是一个Promise对象</p>
+<p>另外一种方式：</p>
+<pre><code>RES.LoadConfig.then(()=&gt;{
+    console.log(&quot;config file load complete!&quot;);
+}).catch((err)=&gt;{
+    console.log(err);
+});
+</code></pre><h3 id="关于await-和-ansy的一些说明和彼此配合"><a href="#关于await-和-ansy的一些说明和彼此配合" class="headerlink" title="关于await 和 ansy的一些说明和彼此配合"></a>关于await 和 ansy的一些说明和彼此配合</h3><p>用<code>await</code>放在函数之前，是因为函数返回了了一个Promise对象，就是修饰了Promise对象。所以await只是针对promise对象。这是第一点。</p>
+<p>其次，我们使用的await的时候，是阻塞的。比如：</p>
+<pre><code>await RES.loadConfig(&quot;resource/default.res.json&quot;, &quot;resource/&quot;);
+this.nextLogic();
+</code></pre><p>在执行这一句的时候，要执行完了才能执行<code>this.nextLogic();</code>。如果不想阻塞，就执行<code>this.nextLogic();</code>，可以采用如下<code>asyn</code>方式：</p>
+<pre><code>public asyn doSthAwait(){
+    await RES.loadConfig(&quot;resource/default.res.json&quot;, &quot;resource/&quot;);
+}
+
+...
+
+this.doSthAwait();
+this.nextLogic();
+</code></pre><p>这样，程序会在调用了<code>doSthAwait()</code>之后，<strong>马上</strong>执行<code>nextLogic()</code></p>
+<h3 id="获得加载资源组的进度"><a href="#获得加载资源组的进度" class="headerlink" title="获得加载资源组的进度"></a>获得加载资源组的进度</h3><p>引擎提供了一个接口类型，这个接口可以帮助我们获得进度：</p>
+<p>先看一下定义：（略过也可以，( • ̀ω•́ )✧</p>
+<pre><code>declare namespace RES {
+    /**
+     * Promise的回调函数集合
+     */
+    interface PromiseTaskReporter {
+        /**
+         * 进度回调
+         */
+        onProgress?: (current: number, total: number) =&gt; void;
+        /**
+         * 取消回调
+         */
+        onCancel?: () =&gt; void;
+    }
+}
+</code></pre><p>我们查看新引擎的新建项目，如何用，三步走：</p>
+<p>继承这个接口:</p>
+<pre><code>class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
+}
+</code></pre><p>利用这个接口:</p>
+<pre><code>const loadingView = new LoadingUI();
+await RES.loadGroup(&quot;preload&quot;, 0, loadingView);
+</code></pre><p>实现接口函数：</p>
+<pre><code>public onProgress(current: number, total: number): void {
+    this.textField.text = `Loading...${current}/${total}`;
+}
+</code></pre><p>分析：在LoadingUI界面里面继承这个接口（很淫荡的做法），然后在调用加载资源组的时候，这个实现了这个接口的类型的对象，赋值给加载资源组函数的第三个形参。这样，引擎资源组的资源的时候，加载成功一个就去调用这个接口的<code>onProgress()</code>，那么我们可以在<code>onProgress()</code>实现我们的业务逻辑。</p>
+<h3 id="自定义加载类型特别说明，因为官方文档out啦"><a href="#自定义加载类型特别说明，因为官方文档out啦" class="headerlink" title="自定义加载类型特别说明，因为官方文档out啦"></a>自定义加载类型特别说明，因为官方文档out啦</h3><p>在查看egret文档的时候，我们总是看到一种写法是<a href="mailto:`@RES.mapConfig" target="_blank" rel="noopener">`@RES.mapConfig</a><code>，用于自定义资源格式的加载，但是在新版本的引擎版本中，我们看到这部分的定义是写在了</code>script\confg.ts`里面，并且采用比较常见的的写法：</p>
+<pre><code>typeSelector: (path) =&gt; {
+    const ext = path.substr(path.lastIndexOf(&quot;.&quot;) + 1);
+    const typeMap = {
+        &quot;jpg&quot;: &quot;image&quot;,
+        &quot;png&quot;: &quot;image&quot;,
+        &quot;webp&quot;: &quot;image&quot;,
+        &quot;json&quot;: &quot;json&quot;,
+        &quot;fnt&quot;: &quot;font&quot;,
+        &quot;pvr&quot;: &quot;pvr&quot;,
+        &quot;mp3&quot;: &quot;sound&quot;,
+        &quot;zip&quot;: &quot;zip&quot;,
+        &quot;sheet&quot;: &quot;sheet&quot;,
+        &quot;exml&quot;: &quot;text&quot;
+    }
+    let type = typeMap[ext];
+    if (type == &quot;json&quot;) {
+        if (path.indexOf(&quot;sheet&quot;) &gt;= 0) {
+            type = &quot;sheet&quot;;
+        } else if (path.indexOf(&quot;movieclip&quot;) &gt;= 0) {
+            type = &quot;movieclip&quot;;
+        };
+    }
+    return type;
+}
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/jjs/2018/04/10/猫猫指南/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -838,7 +1036,7 @@
               
                 <a href="/jjs/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -851,7 +1049,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/jjs/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
